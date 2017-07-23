@@ -505,7 +505,7 @@ function updatePositions() {
   var items = document.getElementsByClassName('mover');
   var scroll_start = document.body.scrollTop / 1250;
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((scroll_start) + (i % 5));
+    var phase = Math.sin(scroll_start + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -530,10 +530,12 @@ document.addEventListener('DOMContentLoaded', function() {
   var totalPizzas = 0;
   var winWidth = window.innerWidth;
   
-  if (winWidth >= 768) {
-    totalPizzas = winWidth/20;
+  if (winWidth >= 1200) {
+    totalPizzas = winWidth/50;
+  } else if (winWidth >= 768) {
+	totalPizzas = winWidth/40;  
   } else {
-    totalPizzas = 16;
+    totalPizzas = 20;
   }
   
   for (var i = 0; i < totalPizzas; i++) {
