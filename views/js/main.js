@@ -503,9 +503,9 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.getElementsByClassName('mover');
-  var scroll_start = document.body.scrollTop / 1250;
+  var scrollStart = document.body.scrollTop / 1250;
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin(scroll_start + (i % 5));
+    var phase = Math.sin(scrollStart + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
