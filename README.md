@@ -4,6 +4,34 @@ Your challenge, if you wish to accept it (and we sure hope you will), is to opti
 
 To get started, check out the repository and inspect the code.
 
+### Index.html optimizations
+
+#### Javascript blocking changes
+I was able to change javascript to async in order to not be blocking
+
+#### CSS blocking changes
+I was able to inline main CSS file within HTML head and change media query for print CSS to prevent blocking
+
+#### Remove webfonts
+I measured loading time for webfonts and by getting rid of it completely was able to make my page speed score above a "90".
+
+#### Optimized pizza image files
+I compressed and resized pizza and pizzeria image files to improve FPS.
+
+
+### Pizza.html optimizations
+
+#### Reduced number of pizzas
+Changed javascript to reduce number of pizzas that are not visible on screen to increase FPS.
+
+#### Replaced querySelector statements
+Changed querySelector statements with document.getElement statements to improve FPS.
+
+#### Moved unnecessary variable assignments out of for loop.
+Took out variable assignments that did not need repeating out of for loop to increase FPS.
+
+
+
 ### Getting started
 
 #### Part 1: Optimize PageSpeed Insights score for index.html
