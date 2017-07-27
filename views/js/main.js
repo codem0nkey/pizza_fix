@@ -535,9 +535,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // define totalPizzas to display based on window width
   if (winWidth >= 1200) {
-    totalPizzas = winWidth/50;
+    totalPizzas = winWidth/30;
   } else if (winWidth >= 768) {
-	totalPizzas = winWidth/40;  
+	totalPizzas = winWidth/20;  
   } else {
 	// totalPizzas will be at least 20 for smaller window sizes
     totalPizzas = 20;
