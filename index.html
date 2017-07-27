@@ -7,10 +7,16 @@
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
 
-    <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
-    <!--<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">-->
-
-    <!--<link href="css/style.css" rel="stylesheet">-->
+    <!-- Hmm, what is the impact of web fonts on speed? Measure it... 
+		
+		// Get rid of webfont to improve loading time
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+		
+		/// Inline CSS in head instead of downloading separate style sheet ///
+		<link href="css/style.css" rel="stylesheet">
+		
+		-->
+		
 		<style>
 			html {
 				font-size: 100%;
@@ -73,8 +79,8 @@
       ga('create', 'UA-XXXX-Y');
       ga('send', 'pageview');
     </script>
-    <script async src="http://www.google-analytics.com/analytics.js"></script>
-    <script async src="js/perfmatters.js"></script>
+    <script async src="http://www.google-analytics.com/analytics.js"></script>  // make file asynchronous to avoid JS blocking
+    <script async src="js/perfmatters.js"></script> // make file asynchronous to avoid JS blocking
   </head>
 
   <body>

@@ -19,7 +19,7 @@ I measured loading time for webfonts and by getting rid of it completely was abl
 I compressed and resized pizza and pizzeria image files to improve FPS.
 
 
-### Pizza.html optimizations
+### Main.js optimizations
 
 #### Reduced number of pizzas
 Changed javascript to reduce number of pizzas that are not visible on screen to increase FPS.

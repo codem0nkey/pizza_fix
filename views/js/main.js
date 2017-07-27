@@ -449,9 +449,11 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
+	// Define variables needed outside of for loop
     var pizzaContainers = document.getElementsByClassName("randomPizzaContainer");
     var dx = determineDx(pizzaContainers[0], size);
     var newwidth = (pizzaContainers[0].offsetWidth + dx) + 'px';
+
     for (var i = 0; i < pizzaContainers.length; i++) {
       pizzaContainers[i].style.width = newwidth;
     }
@@ -501,9 +503,10 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
-  var items = document.getElementsByClassName('mover');
-  var scrollStart = document.body.scrollTop / 1250;
+  
+  // Define variables outside of for loop
+  var items = document.getElementsByClassName('mover'); // use document.getElement statement to improve FPS
+  var scrollStart = document.body.scrollTop / 1250; // outside of for loop to improve FPS
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin(scrollStart + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
@@ -530,11 +533,13 @@ document.addEventListener('DOMContentLoaded', function() {
   var totalPizzas = 0;
   var winWidth = window.innerWidth;
   
+  // define totalPizzas to display based on window width
   if (winWidth >= 1200) {
     totalPizzas = winWidth/50;
   } else if (winWidth >= 768) {
 	totalPizzas = winWidth/40;  
   } else {
+	// totalPizzas will be at least 20 for smaller window sizes
     totalPizzas = 20;
   }
   
