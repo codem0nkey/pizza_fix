@@ -469,10 +469,10 @@ var resizePizzas = function(size) {
 };
 
 window.performance.mark("mark_start_generating"); // collect timing data
+var pizzasDiv = document.getElementById("randomPizzas"); // gets randomPizzas ID
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -530,11 +530,24 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   
-  var totalPizzas = 0;
-  var winWidth = window.innerWidth;
+  	  var totalPizzas = 0;
+	  var winWidth = window.innerWidth;
+	  var winHeight = window.innerHeight;
+	  var numRows = winHeight / s;
+  
+  if (winWidth >= 768) {
+	  totalPizzas = cols * numRows;
+  }
+  else {
+	  totalPizzas = 24;
+  }
+    
   
   // define totalPizzas to display based on window width
-  if (winWidth >= 1200) {
+  
+  
+  
+/*  if (winWidth >= 1200) {
     totalPizzas = winWidth/30;
   } else if (winWidth >= 768) {
 	totalPizzas = winWidth/20;  
@@ -542,6 +555,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	// totalPizzas will be at least 20 for smaller window sizes
     totalPizzas = 20;
   }
+ */
   
   for (var i = 0; i < totalPizzas; i++) {
     var elem = document.createElement('img');
